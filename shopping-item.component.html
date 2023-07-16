@@ -1,0 +1,28 @@
+
+<div class="container text-center">
+              
+    <div class="card text-center mt-5 m-4" id="product">
+      <div class="card-body">
+        <img [src]="product.pImg" [alt]="product.pImg" >
+
+        <h3>{{product.pName}} </h3>
+        <div class="btn-group mb-4" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-secondary" (click)="minus()"><i class="fa fa-minus"></i></button>
+          <input type="number"  class="form-control text-center mx-2"  [value]="counter" >
+          <button type="button" class="btn btn-secondary"(click)="plus()"><i class="fa fa-plus"></i></button>
+        </div>
+        <p class="mt-2">price :{{product.pPrice  | currency:'INR'}}  </p>
+        <button class="btn btn-primary " (click)="addToBag()">Add to Bag</button>    
+
+      </div>
+    </div>
+  
+  
+  
+
+
+
+
+
+</div>
+  

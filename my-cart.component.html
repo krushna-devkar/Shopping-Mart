@@ -1,0 +1,27 @@
+<div class="container">
+  <table class="table table-bordered text-center mt-5">
+    <thead>
+      <tr>
+        <th>Product Image</th>
+        <th> Product Name</th>
+        <th>Quantity<th>
+        <th>Price</th>
+        <th>Total</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let list of shoppingList">
+      <tr>
+        <td><img [src]="list.img" [alt]="list.img"></td>
+        <td>{{list.name}}</td>
+        <td >{{list.qty }} unit</td>
+        <td colspan="2" >{{list.price}} </td>
+        <td> {{list.qty}} * {{list.price}}</td>
+        <td>
+          <button class="btn-danger" (click)="onClick(Product)">Delete</button>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
