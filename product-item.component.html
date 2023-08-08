@@ -1,0 +1,19 @@
+
+  <div class="card p-3 mb-4 text-center">
+    <div class="card-title">
+      <img class="image" [src]="product.pImg" [alt]="product.pImg" >
+    </div>
+    <div class="card-body">
+      <h5 class="card-title font-weight-bold">{{product.pName}}</h5>
+      <p class="card-text text-danger"> INR : {{product.pPrice}}</p>
+      <div class="btn-group " role="group" >
+        <button type="button"  (click)="decrease()"><i class="fa fa-minus"></i></button>
+        <input type="number"  class="form-control text-center mx-2"  [value]="counter" >
+        <button type="button" (click)="increase()"><i class="fa fa-plus"></i></button>
+      </div><br>
+      <button type="submit" (click)="addToBag(product)" class="btn btn-primary mt-2">Add to Bag</button>
+    </div>
+
+  </div>
+
+
