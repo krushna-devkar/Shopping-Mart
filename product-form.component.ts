@@ -12,11 +12,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductFormComponent implements OnInit {
   productForm : any;
-  url : any;
+  url: any
 
-  size_limit :boolean =false;
-
-  constructor( private productServe : ProductService, private http: HttpClient){}
+  constructor( private productServe : ProductService){}
 
   ngOnInit(): void {
       this.productForm = new FormGroup({
@@ -34,8 +32,8 @@ export class ProductFormComponent implements OnInit {
 
     let prod = this.productForm.value;
     console.log(prod)
-    let productObj = new Product(prod.pName, prod.pQty, prod.pPrice, this.url)
-    this.productServe.addNewProductToList(productObj);
+    let newProduct = new Product(prod.pName, prod.pQty, prod.pPrice, this.url)
+    this.productServe.addNewProductToList(newProduct);
     this.productForm.reset();
   }
 }
