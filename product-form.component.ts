@@ -26,19 +26,16 @@ export class ProductFormComponent implements OnInit {
   }
 
   imageUpload(event : any){
-      const file = event.currentTarget.files[0];
-      if(file.type == 'image/png' && file.size < 1024*100){
-        const formObj = new FormData();
-      formObj.append('file',file);
-      this.http.post("https://source.unsplash.com/random",formObj).subscribe((res  :any)=>{
-
-      })
-      }else{
-        if(file.size >1024*100){
-          alert("image size should be 100kb")
-        }
-        alert("only png files are allowed")
+     const file = event.currentTarget.files[0];
+    const imgUpload = new FileReader();
+    if(file.size < 100 * 1024){
+      imgUpload.onload = (event : any)=>{
+        this.url = event.target.result;
       }
+      imgUpload.readAsDataURL(file)
+    }else{
+      alert("image size should be less than 100kb")
+    }
       
   }
 
