@@ -18,9 +18,9 @@ export class ProductFormComponent implements OnInit {
 
   ngOnInit(): void {
       this.productForm = new FormGroup({
-        pName : new FormControl(''),
-        pImg : new FormControl(''),
-        pPrice : new FormControl(''),
+        pName : new FormControl('',Validators.required),
+        pImg : new FormControl('',Validators.required),
+        pPrice : new FormControl('',Validators.required),
         pQty : new FormControl(0),
       })
   }
